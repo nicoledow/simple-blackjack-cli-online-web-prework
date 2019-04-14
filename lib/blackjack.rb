@@ -54,21 +54,14 @@ end
 #####################################################
 
 def runner
-  #welcome the player
+  def runner
   welcome
-  
-  #deal their first two cards (their initial round)
-  initial_round
-  
-  #call #hit? and #display_card_total until card total is greater than 21
-    card_sum = initial_round
-  while card_sum <= 21
-    hit?(card_sum)
-    display_card_total(card_sum)
-    card_sum += hit?(card_sum)
+  sum = initial_round
+  until sum > 21 
+    sum = hit?(sum)
+    display_card_total(sum)
   end
-  
-  #end the game when total is greater than 21
-  end_game(card_sum)
+  end_game(sum)
+end
 end
     
